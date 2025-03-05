@@ -1,14 +1,14 @@
-import Link from "next/link"
-import { Calendar, CheckCircle, Clock } from "lucide-react"
+import Link from "next/link";
+import { Calendar, CheckCircle, Clock } from "lucide-react";
 
-import { Button } from "@/components/ui/button"
-import { DynamicBanner } from "@/components/dynamic-banner"
-import { Footer } from "@/components/footer"
-import { Header } from "@/components/header"
+import { Button } from "@/components/ui/button";
+import { DynamicBanner } from "@/components/dynamic-banner";
+import { Footer } from "@/components/footer";
+import { Header } from "@/components/header";
 
 export default function Home() {
   return (
-    <div className="flex min-h-screen flex-col dark bg-black text-white">
+    <div className="flex min-h-screen flex-col bg-black text-white">
       <Header />
       <main className="flex-1">
         <DynamicBanner />
@@ -18,7 +18,9 @@ export default function Home() {
           className="container space-y-12 py-12 md:py-24 lg:py-32 bg-gradient-to-b from-black to-gray-900"
         >
           <div className="mx-auto flex max-w-[58rem] flex-col items-center space-y-4 text-center">
-            <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">Features</h2>
+            <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
+              Features
+            </h2>
             <p className="max-w-[42rem] leading-normal text-muted-foreground sm:text-xl sm:leading-8">
               Everything you need to stay organized and prepared for your exams.
             </p>
@@ -30,7 +32,8 @@ export default function Home() {
               </div>
               <h3 className="text-xl font-bold">Exam Countdown</h3>
               <p className="text-center text-muted-foreground">
-                Set your exam dates and get personalized study schedules to ensure you're prepared on time.
+                Set your exam dates and get personalized study schedules to
+                ensure you&apos;re prepared on time.
               </p>
             </div>
             <div className="flex flex-col items-center space-y-4 rounded-lg border border-gray-800 bg-gray-900/50 p-6 backdrop-blur-sm hover:bg-gray-800/50 transition-all duration-300 hover:-translate-y-1">
@@ -39,7 +42,8 @@ export default function Home() {
               </div>
               <h3 className="text-xl font-bold">Progress Tracking</h3>
               <p className="text-center text-muted-foreground">
-                Track your progress through each course syllabus and identify areas that need more attention.
+                Track your progress through each course syllabus and identify
+                areas that need more attention.
               </p>
             </div>
             <div className="flex flex-col items-center space-y-4 rounded-lg border border-gray-800 bg-gray-900/50 p-6 backdrop-blur-sm hover:bg-gray-800/50 transition-all duration-300 hover:-translate-y-1">
@@ -48,13 +52,17 @@ export default function Home() {
               </div>
               <h3 className="text-xl font-bold">Smart Reminders</h3>
               <p className="text-center text-muted-foreground">
-                Get notified when you're falling behind schedule or when it's time to review difficult topics.
+                Get notified when you&apos;re falling behind schedule or when
+                it&apos;s time to review difficult topics.
               </p>
             </div>
           </div>
         </section>
 
-        <section id="testimonials" className="bg-gray-900 py-12 md:py-24 lg:py-32">
+        <section
+          id="testimonials"
+          className="bg-gray-900 py-12 md:py-24 lg:py-32"
+        >
           <div className="container space-y-12">
             <div className="mx-auto flex max-w-[58rem] flex-col items-center space-y-4 text-center">
               <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
@@ -74,12 +82,15 @@ export default function Home() {
                     <div className="h-10 w-10 rounded-full bg-primary/10" />
                     <div>
                       <p className="font-medium">Student {i}</p>
-                      <p className="text-sm text-muted-foreground">University of Example</p>
+                      <p className="text-sm text-muted-foreground">
+                        University of Example
+                      </p>
                     </div>
                   </div>
                   <p className="mt-4 text-muted-foreground">
-                    "StudyBuddy helped me organize my study schedule and stay on track. I passed all my exams with
-                    flying colors!"
+                    &quot;StudyBuddy helped me organize my study schedule and
+                    stay on track. I passed all my exams with flying
+                    colors!&quot;
                   </p>
                 </div>
               ))}
@@ -92,7 +103,9 @@ export default function Home() {
           className="container space-y-12 py-12 md:py-24 lg:py-32 bg-gradient-to-b from-gray-900 to-black"
         >
           <div className="mx-auto flex max-w-[58rem] flex-col items-center space-y-4 text-center">
-            <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">Simple, transparent pricing</h2>
+            <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
+              Simple, transparent pricing
+            </h2>
             <p className="max-w-[42rem] leading-normal text-muted-foreground sm:text-xl sm:leading-8">
               Start for free, upgrade when you need more features.
             </p>
@@ -103,7 +116,11 @@ export default function Home() {
                 title: "Free",
                 description: "Perfect for getting started",
                 price: "$0",
-                features: ["Up to 3 courses", "Basic progress tracking", "7-day revision history"],
+                features: [
+                  "Up to 3 courses",
+                  "Basic progress tracking",
+                  "7-day revision history",
+                ],
               },
               {
                 title: "Pro",
@@ -128,11 +145,13 @@ export default function Home() {
                   "Team progress reports",
                 ],
               },
-            ].map((plan, index) => (
+            ].map((plan) => (
               <div
                 key={plan.title}
                 className={`flex flex-col rounded-lg border ${
-                  plan.popular ? "border-purple-500 bg-gray-900/70" : "border-gray-800 bg-gray-900/70"
+                  plan.popular
+                    ? "border-purple-500 bg-gray-900/70"
+                    : "border-gray-800 bg-gray-900/70"
                 } p-6 backdrop-blur-sm hover:bg-gray-800/70 transition-all duration-300 hover:-translate-y-1 relative overflow-hidden`}
               >
                 {plan.popular && (
@@ -145,14 +164,19 @@ export default function Home() {
                 )}
                 <div className="flex-grow">
                   <h3 className="text-xl font-bold">{plan.title}</h3>
-                  <p className="mt-2 text-muted-foreground">{plan.description}</p>
+                  <p className="mt-2 text-muted-foreground">
+                    {plan.description}
+                  </p>
                   <div className="my-6">
                     <span className="text-4xl font-bold">{plan.price}</span>
                     <span className="text-muted-foreground">/month</span>
                   </div>
                   <ul className="space-y-2 mb-6">
                     {plan.features.map((feature, featureIndex) => (
-                      <li key={featureIndex} className="flex items-center gap-2">
+                      <li
+                        key={featureIndex}
+                        className="flex items-center gap-2"
+                      >
                         <CheckCircle className="h-4 w-4 text-primary" />
                         <span>{feature}</span>
                       </li>
@@ -171,6 +195,5 @@ export default function Home() {
       </main>
       <Footer />
     </div>
-  )
+  );
 }
-
