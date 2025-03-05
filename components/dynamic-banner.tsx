@@ -1,20 +1,21 @@
-"use client"
+"use client";
 
-import { useEffect, useState } from "react"
-import { motion } from "framer-motion"
-import { ArrowRight, BookOpen, CheckCircle, Clock } from "lucide-react"
-import Link from "next/link"
-import { Button } from "@/components/ui/button"
+import { useEffect, useState } from "react";
+import { motion } from "framer-motion";
+import { ArrowRight, BookOpen, CheckCircle, Clock } from "lucide-react";
+import Link from "next/link";
+import { Button } from "@/components/ui/button";
 
 export function DynamicBanner() {
-  const [isVisible, setIsVisible] = useState(false)
+  const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
-    setIsVisible(true)
-  }, [])
+    setIsVisible(true);
+  }, []);
 
+  // Ensure content is visible even before animations run
   const container = {
-    hidden: { opacity: 0 },
+    hidden: { opacity: 1 }, // Changed from 0 to 1 to ensure content is visible
     show: {
       opacity: 1,
       transition: {
@@ -22,12 +23,12 @@ export function DynamicBanner() {
         delayChildren: 0.3,
       },
     },
-  }
+  };
 
   const item = {
-    hidden: { y: 20, opacity: 0 },
+    hidden: { y: 0, opacity: 1 }, // Changed from opacity: 0 to 1
     show: { y: 0, opacity: 1, transition: { type: "spring", stiffness: 100 } },
-  }
+  };
 
   const features = [
     {
@@ -45,7 +46,7 @@ export function DynamicBanner() {
       title: "Never Miss a Deadline",
       description: "Countdown to your important exams",
     },
-  ]
+  ];
 
   return (
     <div className="relative overflow-hidden py-12 md:py-24 lg:py-32">
@@ -93,12 +94,15 @@ export function DynamicBanner() {
 
           <motion.div variants={item}>
             <p className="max-w-[42rem] leading-normal text-blue-300 sm:text-xl sm:leading-8">
-              StudyBuddy helps you organize your study materials, track your progress, and stay on schedule for your
-              upcoming exams.
+              StudyBuddy helps you organize your study materials, track your
+              progress, and stay on schedule for your upcoming exams.
             </p>
           </motion.div>
 
-          <motion.div variants={item} className="flex flex-wrap items-center justify-center gap-4">
+          <motion.div
+            variants={item}
+            className="flex flex-wrap items-center justify-center gap-4"
+          >
             <Link href="/signup">
               <Button
                 size="lg"
@@ -130,15 +134,20 @@ export function DynamicBanner() {
                 variants={item}
                 className="flex flex-col items-center p-6 rounded-lg bg-gray-900/30 backdrop-blur-sm border border-gray-800 hover:border-purple-500/50 transition-all duration-300"
               >
-                <div className="rounded-full bg-gray-800 p-3 mb-4">{feature.icon}</div>
-                <h3 className="text-xl font-bold mb-2 text-white">{feature.title}</h3>
-                <p className="text-blue-200/80 text-center">{feature.description}</p>
+                <div className="rounded-full bg-gray-800 p-3 mb-4">
+                  {feature.icon}
+                </div>
+                <h3 className="text-xl font-bold mb-2 text-white">
+                  {feature.title}
+                </h3>
+                <p className="text-blue-200/80 text-center">
+                  {feature.description}
+                </p>
               </motion.div>
             ))}
           </motion.div>
         </motion.div>
       </div>
     </div>
-  )
+  );
 }
-
