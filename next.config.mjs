@@ -7,10 +7,7 @@ const nextConfig = {
   compiler: {
     removeConsole: process.env.NODE_ENV === 'production',
   },
-  // Improve hydration
-  experimental: {
-    optimizeCss: true,
-  },
+  // Removed optimizeCss experimental feature that was causing build errors
 };
 
 export default nextConfig;
