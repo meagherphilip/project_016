@@ -98,13 +98,13 @@ export function DynamicBanner() {
             className="mx-auto flex max-w-[58rem] flex-col items-center space-y-8 text-center"
           >
             <motion.div variants={item}>
-              <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl bg-gradient-to-r from-purple-400 via-pink-500 to-red-500 text-transparent bg-clip-text">
+              <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl bg-gradient-to-r from-purple-400 via-pink-500 to-red-500 text-transparent bg-clip-text animate-fade-in-down">
                 Ace your exams with personalized study plans
               </h1>
             </motion.div>
 
             <motion.div variants={item}>
-              <p className="max-w-[42rem] leading-normal text-blue-300 sm:text-xl sm:leading-8">
+              <p className="max-w-[42rem] leading-normal text-blue-300 sm:text-xl sm:leading-8 animate-fade-in-up">
                 StudyBuddy helps you organize your study materials, track your
                 progress, and stay on schedule for your upcoming exams.
               </p>
@@ -112,12 +112,12 @@ export function DynamicBanner() {
 
             <motion.div
               variants={item}
-              className="flex flex-wrap items-center justify-center gap-4"
+              className="flex flex-wrap items-center justify-center gap-4 animate-bounce-in"
             >
               <Link href="/signup">
                 <Button
                   size="lg"
-                  className="gap-2 bg-gradient-to-r from-purple-500 to-blue-500 hover:from-purple-600 hover:to-blue-600 border-0"
+                  className="gap-2 bg-gradient-to-r from-purple-500 to-blue-500 hover:from-purple-600 hover:to-blue-600 border-0 animate-glow"
                 >
                   Get Started <ArrowRight className="h-4 w-4" />
                 </Button>
@@ -162,23 +162,23 @@ export function DynamicBanner() {
           // Static fallback version when client-side JS is not available
           <div className="mx-auto flex max-w-[58rem] flex-col items-center space-y-8 text-center">
             <div>
-              <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl bg-gradient-to-r from-purple-400 via-pink-500 to-red-500 text-transparent bg-clip-text">
+              <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl bg-gradient-to-r from-purple-400 via-pink-500 to-red-500 text-transparent bg-clip-text animate-fade-in-down">
                 Ace your exams with personalized study plans
               </h1>
             </div>
 
             <div>
-              <p className="max-w-[42rem] leading-normal text-blue-300 sm:text-xl sm:leading-8">
+              <p className="max-w-[42rem] leading-normal text-blue-300 sm:text-xl sm:leading-8 animate-fade-in-up">
                 StudyBuddy helps you organize your study materials, track your
                 progress, and stay on schedule for your upcoming exams.
               </p>
             </div>
 
-            <div className="flex flex-wrap items-center justify-center gap-4">
+            <div className="flex flex-wrap items-center justify-center gap-4 animate-bounce-in">
               <Link href="/signup">
                 <Button
                   size="lg"
-                  className="gap-2 bg-gradient-to-r from-purple-500 to-blue-500 hover:from-purple-600 hover:to-blue-600 border-0"
+                  className="gap-2 bg-gradient-to-r from-purple-500 to-blue-500 hover:from-purple-600 hover:to-blue-600 border-0 animate-glow"
                 >
                   Get Started <ArrowRight className="h-4 w-4" />
                 </Button>
@@ -198,7 +198,8 @@ export function DynamicBanner() {
               {features.map((feature, index) => (
                 <div
                   key={index}
-                  className="flex flex-col items-center p-6 rounded-lg bg-gray-900/30 backdrop-blur-sm border border-gray-800 hover:border-purple-500/50 transition-all duration-300"
+                  className="flex flex-col items-center p-6 rounded-lg bg-gray-900/30 backdrop-blur-sm border border-gray-800 hover:border-purple-500/50 transition-all duration-300 animate-fade-in-up"
+                  style={{ animationDelay: `${index * 0.2}s` }}
                 >
                   <div className="rounded-full bg-gray-800 p-3 mb-4">
                     {feature.icon}
